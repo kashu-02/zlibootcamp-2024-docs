@@ -110,10 +110,9 @@ fmt.Println(a[1:3]) // [2 3]
 
 ## 演習
 
-1. (ex01-7.go) 以下のプログラムの穴を埋めてください。
+1. (ex01-10.go) 以下のプログラムの穴を埋めてください。
 ```Go
 package main
-
 import "fmt"
 
 type Person struct {
