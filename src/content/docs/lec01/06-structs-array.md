@@ -108,6 +108,31 @@ fmt.Println(a) // [1 2 3 4 5 6]
 fmt.Println(a[1:3]) // [2 3]
 ```
 
+## 演習
 
+1. (ex01-7.go) 以下のプログラムの穴を埋めてください。
+```Go
+package main
+
+import "fmt"
+
+type Person struct {
+    // 名前
+    // 年齢
+}
+
+func main() {
+    // Person型のスライスを作成
+    persons := []Person{
+        // Alice, 20
+        // Bob, 25
+        // Charlie, 30
+    }
+    // スライスの要素を1つずつ取り出して、名前と年齢を出力
+    for _, p := range persons {
+        fmt.Println(, )
+    }
+}
+```
 
 
