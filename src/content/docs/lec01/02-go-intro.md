@@ -159,11 +159,11 @@ import "fmt"
 func main() {
     a := 3
     b := 5
-    fmt.Println("a + b = " + ) // 8
-    fmt.Println("a - b = " + ) // -2
-    fmt.Println("a * b = " + ) // 15
-    fmt.Println("a / b = " + ) // 0
-    fmt.Println("a % b = " + ) // 3
-    fmt.Printlm("aの2乗 = " + ) // 9
+    fmt.Println() // a + bの結果を出力
+    fmt.Println() //　a - bの結果を出力
+    fmt.Println() // a * bの結果を出力
+    fmt.Println() // a / bの結果を出力
+    fmt.Println() // a / bの余りを出力
+    fmt.Println() // aの2乗の結果を出力
 }
 ```
