@@ -1,6 +1,6 @@
 ---
-title: aa
-description: aa
+title: 関数
+description: 関数
 ---
 
 # 関数

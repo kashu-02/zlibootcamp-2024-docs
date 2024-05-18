@@ -1,9 +1,8 @@
 ---
-title: aa
-description: aa
+title: 繰り返し
+description: 繰り返し
 ---
 
-# 繰り返し
 ## for文
 Go言語で繰り返し処理を行うには、`for`文を使います。
 ```go

@@ -1,6 +1,6 @@
 ---
-title: aa
-description: aa
+title:　StructとArray
+description: StructとArray
 ---
 
 # StructとArray

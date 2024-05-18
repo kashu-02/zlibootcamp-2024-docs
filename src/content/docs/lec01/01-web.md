@@ -1,9 +1,7 @@
 ---
-title: aa
-description: aa
+title: Web概論
+description: Web概論
 ---
-
-# Web概論
 ### Webとは
 Webは、World Wide Webの略で、インターネット上に存在する情報を閲覧するためのシステムです。
 Webは、複数のWebページがリンクされていることで、ハイパーテキストとして構成されています。
