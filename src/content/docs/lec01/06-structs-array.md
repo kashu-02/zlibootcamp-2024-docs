@@ -1,5 +1,5 @@
 ---
-title:　StructとArray
+title: StructとArray
 description: StructとArray
 ---
 
