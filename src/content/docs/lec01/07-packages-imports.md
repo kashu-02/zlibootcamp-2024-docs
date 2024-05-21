@@ -1,11 +1,11 @@
 ---
-title: PackagesとImports
-description: PackagesとImports
+title: パッケージとインポート
+description: パッケージとインポート
 ---
 
-# PackagesとImports
+# パッケージとインポート
 
-Goのプログラムは、`package`で構成されます。
+Goのプログラムは、パッケージで構成されます。
 プログラムは、`main`パッケージから開始されます。
 
 今までのプログラムは`main`パッケージに属し、`fmt`パッケージをインポートしていました。
@@ -34,5 +34,5 @@ func main() {
     fmt.Println("Hello, World!")
 }
 ```
-の`Println`は、大文字で始まる名前ですので、他のパッケージ(`main`)からもアクセス可能です。
+の`Println`は、大文字で始まる名前ですので、`fmt`パッケージ以外(`main`)からもアクセス可能です。
 

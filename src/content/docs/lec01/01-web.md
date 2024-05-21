@@ -9,7 +9,7 @@ Webは、複数のWebページがリンクされていることで、ハイパ�
 
 ### HTML
 HTML(HyperText Markup Language)は、Webページを作成するための言語(マークアップ言語)です。
-HTMLは、タグという記号を使って、テキストや画像、リンクなどの要素を記述します。
+HTMLは、タグを使って、テキストや画像、リンクなどの要素を記述します。
 HTMLは、ブラウザによって解釈され、Webページとして表示されます。
 
 ### 静的サイトと動的サイト
@@ -17,15 +17,15 @@ Webサイトは、静的サイトと動的サイトに大別されます。
 静的サイトは、HTMLやCSS、JavaScriptなどのファイルをWebサーバに配置しておき、ユーザがアクセスするとそのままのファイルが返されるサイトです。
 1990年代や2000年代の初めには、静的サイトが主流でした。
 静的サイトの例
-http://abehiroshi.la.coocan.jp/
+- http://abehiroshi.la.coocan.jp/
 
 一方、動的サイトは、ユーザのリクエストに応じてサーバ側で処理を行い、その結果を返すサイトです。
 動的サイトは、ユーザの操作に応じて表示内容を変えたり、データベースにアクセスして情報を取得したりします。
 Webアプリケーションとも呼ばれます。
 動的サイトの例
-https://www.amazon.co.jp/
-https://youtube.com/
-https://calendar.google.com/
+- https://www.amazon.co.jp/
+- https://youtube.com/
+- https://calendar.google.com/
 
 ### フロントエンドとバックエンド
 Webアプリケーションは大きく分けて、以下の3つの部分から構成されます。
@@ -59,25 +59,26 @@ URLは、スキーム、ドメイン名、ポート番号、パス、クエリ�
 https://u-aizu.ac.jp/information/post-20240140.html
 ```
 このURLは、会津大学のWebサイトにある、あるページを指し示しています。
-- スキーム: https
-httpsというスキーム(プロトコル名)を使って通信を行うことを示しています。
-- ドメイン名: u-aizu.ac.jp
-u-aizu.ac.jpというドメイン名を持つWebサイトを指し示しています。
-- パス: /information/post-20240140.html
-/information/post-20240140.htmlというパスを持つページを指し示しています。
+
+- スキーム: `https`
+  - httpsというスキーム(プロトコル名)を使って通信を行うことを示しています。
+- ドメイン名: `u-aizu.ac.jp`
+  - u-aizu.ac.jpというドメイン名を持つWebサイトを指し示しています。
+- パス: `/information/post-20240140.html`
+  - /information/post-20240140.htmlというパスを持つページを指し示しています。
 
 ```
 https://www.google.com/search?q=uaizu
 ```
 このURLは、Googleの検索結果ページを指し示しています。
-- スキーム: https
-httpsというスキーム(プロトコル名)を使って通信を行うことを示しています。
-- ドメイン名: www.google.com
-www.google.comというドメイン名を持つWebサイトを指し示しています。
-- パス: /search
-/searchというパスを持つページを指し示しています。
-- クエリ: q=uaizu
-q=uaizuという情報をサーバーに渡します。
+- スキーム: `https`
+  - httpsというスキーム(プロトコル名)を使って通信を行うことを示しています。
+- ドメイン名: `www.google.com`
+  - www.google.com というドメイン名を持つWebサイトを指し示しています。
+- パス: `/search`
+  - /searchというパスを持つページを指し示しています。
+- クエリ: `q=uaizu`
+  - q=uaizuという情報をサーバーに渡します。
 
 
 ### HTTPとは
@@ -88,7 +89,7 @@ HyperText Transfer Protocol(HTTP)は、Web上、とくにフロントエンド�
 #### HTTPリクエスト
 フロントエンドがバックエンドにリクエストを送る際、HTTPリクエストを送ります。
 HTTPリクエストは、以下の要素から構成されます。
-HTTPリクエストは以下の構造になっています。
+HTTPリクエストは以下のようになっています。
 ```
 GET /index.html HTTP/1.1
 Host: www.example.com
@@ -109,7 +110,7 @@ HTTPメソッドは、リクエストの種類を示すもので、以下のよ�
 
 #### HTTPレスポンス
 HTTPリクエストを送り、バックエンドが返信する際、HTTPレスポンスを返します。
-HTTPレスポンスは、以下の要素から構成されます。
+HTTPレスポンスは、以下のようになっています。
 ```
 HTTP/1.1 200 OK
 Date: Sun, 09 Jan 2022 00:00:00 GMT
@@ -140,6 +141,7 @@ HTTPステータスコードは、リクエストの結果を示す3桁の数字
 - 4xx: クライアントエラー
 - 5xx: サーバエラー
 - その他: その他のステータス
+
 主なステータスコードは以下のようなものがあります。
 - 200: OK リクエストが成功した
 - 301: Moved Permanently リソースが移動した
@@ -157,7 +159,7 @@ curl --verbose https://u-aizu.ac.jp/ 1> /dev/null
 ```
 curlコマンドは指定したURLにリクエストを送信し、レスポンスを表示するコマンドです。
 --verboseオプションを指定することで、リクエストを送信してからレスポンスを受信するまでのステップを表示します。
-`Trying 150.31.244.160:443`, `TLS handshake`, `SSL Connection`などのメッセージのしたに、HTTPリクエストとHTTPレスポンスが表示されます。
+`Trying 150.31.244.160:443`, `TLS handshake`, `SSL Connection`などのメッセージのあとに、HTTPリクエストとHTTPレスポンスが表示されます。
 これらのメッセージについて今回は詳しく説明しませんが、気になった方は調べてみてください。
 
 ### JSONとは
