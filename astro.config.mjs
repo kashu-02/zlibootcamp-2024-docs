@@ -23,6 +23,15 @@ export default defineConfig({
 						{ label: '07-パッケージとインポート', link: '/lec01/07-packages-imports' },
 					],
 				},
+				{
+                	label: '第2回',
+                	items: [
+                		// Each item here is one entry in the navigation menu.
+                		{ label: '01-WebAPI入門', link: '/lec02/01-api-intro' },
+                		{ label: '02-簡単なWebAPIを作成する', link: '/lec02/02-make-simple-api' },
+                		{ label: '03-CRUD機能を持つWebAPIを作成する', link: '/lec02/03-api-crud' },
+                	],
+                },
 			],
 		}),
 	],
