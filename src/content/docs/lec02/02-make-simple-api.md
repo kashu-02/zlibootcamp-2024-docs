@@ -12,12 +12,12 @@ Webフレームワークとは、ウェブサイトやウェブアプリケー�
 開発者がゼロから全てを作らなくても、ルーティングやリクエストの処理、レスポンスの生成などを簡単に行うことができます。
 
 ## WebAPI開発環境のセットアップ
-今回は、`homework/(Gitのユーザー名)/api-ex`というディレクトリに作成します。
-VSCodeのターミナルから、`homework/(Gitのユーザー名)/api-ex`のディレクトリを作成し、移動します。
+今回は、`homework/(Gitのユーザー名)/ex-02`というディレクトリに作成します。
+VSCodeのターミナルから、`homework/(Gitのユーザー名)/ex-02`のディレクトリを作成し、移動します。
 
 ```bash
-$ mkdir -p ~/homework/(Gitのユーザー名)/api-ex
-$ cd ~/homework/(Gitのユーザー名)/api-ex
+mkdir -p ~/homework/(Gitのユーザー名)/ex-02
+cd ~/homework/(Gitのユーザー名)/ex-02
 ```
 
 ## プロジェクトの初期化
@@ -27,14 +27,14 @@ $ cd ~/homework/(Gitのユーザー名)/api-ex
 このコマンドを実行することで、`go.mod`ファイルが作成されます。
 
 ```bash
-$ go mod init github.com/Zli-UoA/zlibootcamp-backend/homework/(Gitのユーザー名)/api-ex
+go mod init github.com/Zli-UoA/zlibootcamp-backend/homework/(Gitのユーザー名)/ex-02
 ```
 
 ## Webフレームワークginのインストール
 次に、`gin`をインストールします。
 
 ```bash
-$ go get -u github.com/gin-gonic/gin
+go get -u github.com/gin-gonic/gin
 ```
 
 ## `Hello World!`を返すWebAPIの作成

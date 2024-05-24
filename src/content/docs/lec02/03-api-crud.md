@@ -25,6 +25,25 @@ RESTfulなWebAPIでは、HTTPメソッドとリクエストURLによって、CRU
 
 WebAPIを作成する際は、CRUD操作を行うことができるかを考慮して設計することが重要です。
 
+## WebAPI開発環境のセットアップ
+今回は、`homework/(Gitのユーザー名)/api-ex`というディレクトリに作成します。
+VSCodeのターミナルから、`homework/(Gitのユーザー名)/api-ex`のディレクトリを作成し、移動します。
+
+```bash
+mkdir -p ~/homework/(Gitのユーザー名)/api-ex
+cd ~/homework/(Gitのユーザー名)/api-ex
+```
+
+## プロジェクトの初期化
+次に、`go mod init`コマンドを使って、プロジェクトを初期化します。
+実際の開発では、標準ライブラリ以外に、外部のパッケージ(モジュール)を使うことがあります。
+このモジュール間の依存関係を管理するために、Goでは、`go.mod`ファイルを使います。
+このコマンドを実行することで、`go.mod`ファイルが作成されます。
+
+```bash
+go mod init github.com/Zli-UoA/zlibootcamp-backend/homework/(Gitのユーザー名)/ex-02
+```
+
 ## Create機能の実装
 この講義では、Twitterクローンの作成を目標に、CRUD機能を持つWebAPIを作成します。
 まずは、ツイートのCreate機能(投稿機能)を実装してみましょう。
@@ -43,31 +62,31 @@ import (
 // Tweetの構造体を定義
 type Tweet struct {
     ID   int    `json:"id"` // JSONのidがTweetのIDにマッピング(対応)される
-    Text string `json:"text"`　// JSONのtextがTweetのTextにマッピング(対応)される
+    Text string `json:"text"` // JSONのtextがTweetのTextにマッピング(対応)される
 }
 
 // Tweetのスライスを定義。ここの変数にツイートが格納される
-var tweets []Tweet{
+var tweets = []Tweet{
     {ID: 1, Text: "Hello, World!"},
 }
 
-var nextId = 2
+var nextID = 2
 
 func main() {
     r := gin.Default() // ginのルーターを作成
 
     r.POST("/tweets", func(c *gin.Context) { // HTTP POSTで/tweetsにアクセスしたときの処理
          var newTweet Tweet
-         if err := c.ShouldBindJSON(&newPost); err != nil { // リクエストボディをTweet構造体にバインド。エラーがあればエラーメッセージを返す
+         if err := c.ShouldBindJSON(&newTweet); err != nil { // リクエストボディをTweet構造体にバインド。エラーがあればエラーメッセージを返す
              c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
              return
          }
-		 newTweet.ID = nextID // IDを設定
-		 nextID++ // 次のIDを+1
-		 tweets = append(tweets, newTweet) // ツイートを追加
-		 c.JSON(http.StatusCreated, newPost) // HTTPステータスコード201(Created)で、新しいツイートを返す
+     newTweet.ID = nextID // IDを設定
+     nextID++ // 次のIDを+1
+     tweets = append(tweets, newTweet) // ツイートを追加
+     c.JSON(http.StatusCreated, newTweet) // HTTPステータスコード201(Created)で、新しいツイートを返す
     })
-    
+
     // Read機能以降はこの下に追記していきます
 
     r.Run(":8080") // ポート8080でサーバーを起動
@@ -102,23 +121,33 @@ r.GET("/tweets", func(c *gin.Context) { // HTTP GETで/tweetsにアクセスし�
 次に、ツイートのUpdate機能(更新機能)を実装してみましょう。
 以下のコードは、PUTリクエストを受け取り、ツイートを更新するWebAPIの例です。
 
+まず、importに、以下の標準ライブラリを追加します。
+```go
+    "strconv"
+```
 ```go
 r.PUT("/tweets/:id", func(c *gin.Context) { // HTTP PUTで/tweets/:idにアクセスしたときの処理
-    id := c.Param("id") // URLの:idを取得
-    for i, tweet := range tweets {
-        if tweet.ID == id {
-            var updatedTweet Tweet
-            if err := c.ShouldBindJSON(&updatedTweet); err != nil { // リクエストボディをTweet構造体にバインド。エラーがあればエラーメッセージを返す
-                c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-                return
-            }
-            tweets[i] = updatedTweet // ツイートを更新
-            c.JSON(http.StatusOK, updatedTweet) // HTTPステータスコード200(OK)で、更新されたツイートを返す
-            return
-        }
-    }
-    c.JSON(http.StatusNotFound, gin.H{"error": "Tweet not found"}) // HTTPステータスコード404(Not Found)で、ツイートが見つからないエラーメッセージを返す
-})
+		id, err := strconv.Atoi(c.Param("id")) // URLの:idを取得
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"error": "Invalid ID",
+			})
+		}
+		for i, tweet := range tweets {
+			if tweet.ID == id {
+				var updatedTweet Tweet
+				if err := c.ShouldBindJSON(&updatedTweet); err != nil { // リクエストボディをTweet構造体にバインド。エラーがあればエラーメッセージを返す
+					c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+					return
+				}
+				updatedTweet.ID = id
+				tweets[i] = updatedTweet // ツイートを更新
+				c.JSON(http.StatusOK, updatedTweet) // HTTPステータスコード200(OK)で、更新されたツイートを返す
+				return
+			}
+		}
+		c.JSON(http.StatusNotFound, gin.H{"error": "Tweet not found"}) // HTTPステータスコード404(Not Found)で、ツイートが見つからないエラーメッセージを返す
+	})
 ```
 
 実際にPostmanなどで`http://localhost:8080/tweets/1`にPUTリクエストを送信してみましょう。
@@ -137,16 +166,21 @@ HTTPステータスコード200(OK)で、更新されたツイートが返って
 
 ```go
 r.DELETE("/tweets/:id", func(c *gin.Context) { // HTTP DELETEで/tweets/:idにアクセスしたときの処理
-    id := c.Param("id") // URLの:idを取得
-    for i, tweet := range tweets {
-        if tweet.ID == id {
-            tweets = append(tweets[:i], tweets[i+1:]...) // ツイートを削除
-            c.JSON(http.StatusOK, gin.H{"message": "Tweet deleted"}) // HTTPステータスコード200(OK)で、ツイートが削除されたメッセージを返す
-            return
-        }
-    }
-    c.JSON(http.StatusNotFound, gin.H{"error": "Tweet not found"}) // HTTPステータスコード404(Not Found)で、ツイートが見つからないエラーメッセージを返す
-})
+		id, err := strconv.Atoi(c.Param("id")) // URLの:idを取得
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"error": "Invalid ID",
+			})
+		}
+		for i, tweet := range tweets {
+			if tweet.ID == id {
+				tweets = append(tweets[:i], tweets[i+1:]...) // ツイートを削除
+				c.JSON(http.StatusOK, gin.H{"message": "Tweet deleted"}) // HTTPステータスコード200(OK)で、ツイートが削除されたメッセージを返す
+				return
+			}
+		}
+		c.JSON(http.StatusNotFound, gin.H{"error": "Tweet not found"}) // HTTPステータスコード404(Not Found)で、ツイートが見つからないエラーメッセージを返す
+	})
 ```
 
 実際にPostmanなどで`http://localhost:8080/tweets/1`にDELETEリクエストを送信してみましょう。

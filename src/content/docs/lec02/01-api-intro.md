@@ -66,7 +66,7 @@ OpenWeatherMap APIは、世界中の天気情報を[JSON形式](lec01/01-web/#js
 Postmanは、WebAPIのテストやデバッグを行うためのツールです。Postmanを使うことで、WebAPIのリクエストを簡単に作成し、レスポンスを確認することができます。
 
 1. [Postmanのダウンロード](https://www.postman.com/downloads/)ページにアクセスし、Postmanをダウンロードしてインストールします。
-2. Postmanを起動し、アカウントを作成します。
+2. Postmanを起動し、`continue with the lightweight API Client`をクリックします。
 
 ### OpenWeatherMap APIの利用
 1. [OpenWeatherMap API](https://openweathermap.org/api)にアクセスし、アカウントを作成します。
