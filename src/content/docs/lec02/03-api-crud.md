@@ -30,8 +30,8 @@ WebAPIを作成する際は、CRUD操作を行うことができるかを考慮�
 VSCodeのターミナルから、`homework/(Gitのユーザー名)/api-ex`のディレクトリを作成し、移動します。
 
 ```bash
-mkdir -p ~/homework/(Gitのユーザー名)/api-ex
-cd ~/homework/(Gitのユーザー名)/api-ex
+mkdir -p homework/(Gitのユーザー名)/api-ex
+cd homework/(Gitのユーザー名)/api-ex
 ```
 
 ## プロジェクトの初期化
@@ -41,7 +41,7 @@ cd ~/homework/(Gitのユーザー名)/api-ex
 このコマンドを実行することで、`go.mod`ファイルが作成されます。
 
 ```bash
-go mod init github.com/Zli-UoA/zlibootcamp-backend/homework/(Gitのユーザー名)/ex-02
+go mod init github.com/Zli-UoA/zlibootcamp-backend/homework/(Gitのユーザー名)/api-ex
 ```
 
 ## Create機能の実装

@@ -83,6 +83,6 @@ HTTPリクエストを受け取り、URLとHTTPメソッドに応じて処理を
 以下の演習問題は、`hello.go`内の`r.GET("/hello", func(c *gin.Context) {`のブロックの下、`r.Run(":8080")`の上に追記してください。
 1. HTTP POSTで`/hello`にアクセスすると、`Hello, Zli!`というJSONを返すWebAPIを作成してみましょう。
 1. HTTP DELETEで`/bye`にアクセスすると、`Bye!`というJSONを返すWebAPIを作成してみましょう。
-1. `/konnichiwa`にアクセスすると、HTTPステータスコード400(Bad Request)で、`Bad Request`というJSONを返すWebAPIを作成してみましょう。  
+1. HTTP GETで`/konnichiwa`にアクセスすると、HTTPステータスコード400(Bad Request)で、`Bad Request`というJSONを返すWebAPIを作成してみましょう。  
    ヒント: `http.StatusBadRequest`を使うと、HTTPステータスコード400を指定できます。
 1. `/hello`以外にも、好きなエンドポイント、メッセージを返すAPIを作成してみましょう。
