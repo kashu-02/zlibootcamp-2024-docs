@@ -16,8 +16,8 @@ Webフレームワークとは、ウェブサイトやウェブアプリケー�
 VSCodeのターミナルから、`homework/(Gitのユーザー名)/ex-02`のディレクトリを作成し、移動します。
 
 ```bash
-mkdir -p ~/homework/(Gitのユーザー名)/ex-02
-cd ~/homework/(Gitのユーザー名)/ex-02
+mkdir -p homework/(Gitのユーザー名)/ex-02
+cd homework/(Gitのユーザー名)/ex-02
 ```
 
 ## プロジェクトの初期化
