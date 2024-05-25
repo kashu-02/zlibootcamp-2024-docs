@@ -44,6 +44,13 @@ cd homework/(Gitのユーザー名)/api-ex
 go mod init github.com/Zli-UoA/zlibootcamp-backend/homework/(Gitのユーザー名)/api-ex
 ```
 
+## Webフレームワークginのインストール
+次に、`gin`をインストールします。
+
+```bash
+go get -u github.com/gin-gonic/gin
+```
+
 ## Create機能の実装
 この講義では、Twitterクローンの作成を目標に、CRUD機能を持つWebAPIを作成します。
 まずは、ツイートのCreate機能(投稿機能)を実装してみましょう。
