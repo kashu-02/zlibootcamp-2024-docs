@@ -9,7 +9,7 @@ description: WebAPI入門
 この講義では、Twitterクローンの作成を目標に、WebAPIの作成方法を学びます。
 
 ## WebAPIとは
-WebAPIとは、[HTTPプロトコル](lec01/01-web/#httpとは)を使ってネットワークを通して情報をやり取りするためのAPIのことです。
+WebAPIとは、[HTTPプロトコル](/lec01/01-web/#httpとは)を使ってネットワークを通して情報をやり取りするためのAPIのことです。
 API(Application Programming Interface)とは、アプリケーション同士が情報をやり取りするためのインターフェースのことです。
 APIが提供されることで、他のアプリケーションがその中身を知らなくても情報をやり取りすることができます。
 
@@ -46,7 +46,7 @@ GET: データを取得する
 
 POST: 新しいデータを作成する
 
-PUT: 既存のデータを更新する
+PUT・PATCH: 既存のデータを更新する
 
 DELETE: データを削除する
 
@@ -60,7 +60,7 @@ RESTful APIはステートレス（状態を持たない）です。つまり、
 
 ## 実際のWebAPIを見てみよう
 実際に、OpenWeatherMap APIを使って天気情報を取得してみましょう。
-OpenWeatherMap APIは、世界中の天気情報を[JSON形式](lec01/01-web/#jsonとは)で提供するAPIです。無料で登録するだけで利用できます。
+OpenWeatherMap APIは、世界中の天気情報を[JSON形式](/lec01/01-web/#jsonとは)で提供するAPIです。無料で登録するだけで利用できます。
 
 ### 事前準備: Postmanのインストール
 Postmanは、WebAPIのテストやデバッグを行うためのツールです。Postmanを使うことで、WebAPIのリクエストを簡単に作成し、レスポンスを確認することができます。

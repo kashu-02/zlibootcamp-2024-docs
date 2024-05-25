@@ -71,7 +71,7 @@ $ go run hello.go
 `r := gin.Default()`は、ginのルーターを作成しています。
 HTTPリクエストを受け取り、URLとHTTPメソッドに応じて処理を振り分けるためのものです。
 
-`r.GET("/hello", func(c *gin.Context) {`は、[HTTP GET](lec01/01-web/#httpメソッド)で`/hello`にアクセスしたときの処理を記述しています。
+`r.GET("/hello", func(c *gin.Context) {`は、[HTTP GET](/lec01/01-web/#httpメソッド)で`/hello`にアクセスしたときの処理を記述しています。
 
 実際にPostmanなどで`http://localhost:8080/hello`にアクセスしてみましょう。
 
