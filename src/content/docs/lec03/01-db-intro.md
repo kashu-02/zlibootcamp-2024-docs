@@ -71,6 +71,12 @@ SQLite3は、軽量なデータベースエンジンで、ファイルベース�
 sudo apt install sqlite3
 ```
 
+macOSの場合は、Homebrewを使ってインストールします。
+
+```bash
+brew install sqlite3
+```
+
 インストールが完了したら、以下のコマンドでSQLite3のバージョンを確認します。
 
 ```bash
