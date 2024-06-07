@@ -32,6 +32,14 @@ export default defineConfig({
                 		{ label: '03-CRUD機能を持つWebAPIを作成する', link: '/lec02/03-api-crud' },
                 	],
                 },
+				{
+                	label: '第3回',
+                	items: [
+                		// Each item here is one entry in the navigation menu.
+                		{ label: '01-データベース入門', link: '/lec03/01-db-intro' },
+                		{ label: '02-GoからSQLite3を操作する', link: '/lec03/02-go-sql' },
+                	],
+                },
 			],
 		}),
 	],
