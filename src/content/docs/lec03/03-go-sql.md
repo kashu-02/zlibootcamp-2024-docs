@@ -11,6 +11,7 @@ Goからも様々なデータベースを操作することがでできますが
 最初に、GoプログラムからSQLite3を操作するために、SQLite3のドライバーをインストールする必要があります。go-sqlite3パッケージが一般的に使用されます。以下のコマンドを使用してインストールします。
 
 ```
+go mod init example
 go get github.com/mattn/go-sqlite3
 ```
 
